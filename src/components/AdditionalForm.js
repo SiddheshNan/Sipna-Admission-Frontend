@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, Fragment } from "react";
 import sipnalogo from "../assets/sipna_logo.png";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
@@ -14,6 +14,7 @@ export default class AdditionalForm extends Component {
       altcon: "",
       email: "",
       branch: "IT",
+      other: "",
       aggrigate: "",
       phy: "",
       maths: "",
@@ -24,6 +25,7 @@ export default class AdditionalForm extends Component {
       faminc: "Less than 1 Lacs",
       ewc: "Yes",
       helprec: "Yes",
+      additional_text: "",
       recaptcha: "",
       recaptchaRef: React.createRef(),
     };
@@ -76,6 +78,8 @@ export default class AdditionalForm extends Component {
           family_inc: this.state.faminc,
           ewc: this.state.ewc,
           help_required: this.state.helprec,
+          other_branch: this.state.other,
+          additional_text: this.state.additional_text,
         },
       })
       .then(function (response) {
@@ -112,7 +116,7 @@ export default class AdditionalForm extends Component {
 
           <div className="flex flex-col justify-between text-center">
             <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-            Admission Enquiry
+              Admission Enquiry
             </h2>
           </div>
 
@@ -149,7 +153,7 @@ export default class AdditionalForm extends Component {
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
-              Alternate / Parents Contact No
+                Alternate / Parents Contact No
               </span>
               <input
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
@@ -162,8 +166,6 @@ export default class AdditionalForm extends Component {
                 onChange={this.handleChange}
               />
             </div>
-
-
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
@@ -199,8 +201,30 @@ export default class AdditionalForm extends Component {
                 <option value="MECH">MECH</option>
                 <option value="CIVIL">CIVIL</option>
                 <option value="BArch">B.Arch</option>
+                <option value="Other">Other</option>
               </select>
             </div>
+            {this.state.branch === "Other" ? (
+              <Fragment>
+                <div className="mt-4">
+                  <span className="uppercase text-sm text-gray-600 font-bold">
+                    If Other, Please Specify
+                  </span>
+                  <input
+                    className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                    type="text"
+                    required
+                    placeholder="Other Branch.."
+                    id="other"
+                    name="other"
+                    value={this.state.other}
+                    onChange={this.handleChange}
+                  />
+                </div>
+              </Fragment>
+            ) : (
+              ""
+            )}
 
             <h3 className="uppercase  text-gray-600 mt-8 font-bold h3 text-center">
               Academic Details
@@ -361,7 +385,7 @@ export default class AdditionalForm extends Component {
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
-                Do You reqiured help for doccuments required
+                Do You reqiured help for documents required
               </span>
               <select
                 id="helprec"
@@ -374,6 +398,23 @@ export default class AdditionalForm extends Component {
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
               </select>
+            </div>
+
+            <div className="mt-8">
+              <span className="uppercase text-sm text-gray-600 font-bold">
+                Would you like to add more additional information?
+              </span>
+              <textarea
+                id="additional_text"
+                name="additional_text"
+                value={this.state.additional_text}
+                onChange={this.handleChange}
+                rows="4"
+                cols="50"
+                maxLength="50"
+                placeholder="Additional Information.. (if any)"
+                className=" block w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg  leading-tight focus:outline-none focus:shadow-outline"
+              />
             </div>
 
             <div className="mt-8">

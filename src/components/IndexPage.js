@@ -33,27 +33,27 @@ export default class IndexPage extends Component {
             <div className="flex flex-wrap text-center bg-yellow-200 pt-3">
               <div className="w-full text-left ml-6 md:ml-0 md:text-center md:w-1/5  mb-4">
                 {" "}
-                <i className="fas fa-check-circle" />
+                <i className="fas fa-dot-circle" />
                 &nbsp; BE
               </div>
               <div className="w-full text-left ml-6 md:ml-0 md:text-center md:w-1/5 mb-4 ">
                 {" "}
-                <i className="fas fa-check-circle" />
+                <i className="fas fa-dot-circle" />
                 &nbsp; ME
               </div>
               <div className="w-full text-left ml-6 md:ml-0 md:text-center md:w-1/5 mb-4">
                 {" "}
-                <i className="fas fa-check-circle" />
+                <i className="fas fa-dot-circle" />
                 &nbsp; PhD
               </div>
               <div className="w-full text-left ml-6 md:ml-0 md:text-center md:w-1/5 mb-4 ">
                 {" "}
-                <i className="fas fa-check-circle" />
+                <i className="fas fa-dot-circle" />
                 &nbsp; MBA
               </div>
               <div className="w-full text-left ml-6 md:ml-0 md:w-1/5 mb-4">
                 {" "}
-                <i className="fas fa-check-circle" />
+                <i className="fas fa-dot-circle" />
                 &nbsp; B.Arch.
               </div>
             </div>{" "}
@@ -62,30 +62,32 @@ export default class IndexPage extends Component {
           <h3 className="my-4 mt-12 text-xl text-red-600 ml-4 font-semibold md:ml-4">
             UG Programs: B.E.(Four Years Degree Courses)
           </h3>
-          <div className="text-center bg-yellow-200">
-            <div className="flex content-around content-center flex-wrap max-w-4xl mx-auto items-center justify-between text-xl font-bold text-center">
-              <span className="flex-auto w-1/2 p-4 flex">
-                <i className="fas fa-check-circle" />
+          <div className="bg-yellow-200 mx-auto text-xl font-bold ">
+            <div className="flex flex-wrap text-left sm:ml-8 md:ml-20">
+              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
+                <i className="fas fa-dot-circle " />
                 &nbsp; Computer Science &amp; Engineering
-              </span>
-              <span className="flex-auto w-auto p-4 flex">
-                <i className="fas fa-check-circle" />
+              </div>
+              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
+                <i className="fas fa-dot-circle" />
                 &nbsp; Information Technology
-              </span>
-              <span className="flex-auto w-1/2 p-4 flex">
-                <i className="fas fa-check-circle" />
+              </div>
+
+              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
+                <i className="fas fa-dot-circle" />
                 &nbsp; Electronics &amp; Telecomm. Engg.
-              </span>
-              <span className="flex-auto w-auto p-4 flex">
-                <i className="fas fa-check-circle" />
+              </div>
+              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
+                <i className="fas fa-dot-circle" />
                 &nbsp; Mechanical Engineering
-              </span>
-              <span className="flex-auto w-1/2 p-4 flex">
-                <i className="fas fa-check-circle" />
+              </div>
+              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 ">
+                <i className="fas fa-dot-circle" />
                 &nbsp; Civil Engineering
-              </span>
+              </div>
             </div>
           </div>
+
           <h3 className="mt-12 text-xl text-red-600 ml-4 font-semibold md:ml-4">
             HIGHLIGHTS
           </h3>
@@ -149,8 +151,7 @@ export default class IndexPage extends Component {
             <ul>
               <li className="my-2">
                 <i className="fas fa-dot-circle" />
-                &nbsp; Fully dedicated and transparent management. Highly
-                qualified &amp; committed faculty &amp; staff.
+                &nbsp; Fully dedicated and transparent management.
               </li>
               <li className="my-2">
                 <i className="fas fa-dot-circle" />

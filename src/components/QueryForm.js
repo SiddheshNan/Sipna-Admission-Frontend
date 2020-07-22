@@ -3,7 +3,7 @@ import sipnalogo from "../assets/sipna_logo.png";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import swal from "sweetalert";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 
 export default class QueryFrom extends Component {
   constructor(props) {
@@ -18,6 +18,7 @@ export default class QueryFrom extends Component {
       taluka: "",
       district: "",
       recaptcha: "",
+      additional_text: "",
       recaptchaRef: React.createRef(),
     };
   }
@@ -62,6 +63,7 @@ export default class QueryFrom extends Component {
           village: this.state.village,
           taluka: this.state.taluka,
           district: this.state.district,
+          additional_text: this.state.additional_text,
         },
       })
       .then(function (response) {
@@ -98,7 +100,7 @@ export default class QueryFrom extends Component {
 
           <div className="flex flex-col justify-between text-center">
             <h2 className="text-4xl lg:text-5xl font-bold leading-tight">
-            Admission Enquiry
+              Admission Enquiry
             </h2>
           </div>
 
@@ -135,7 +137,7 @@ export default class QueryFrom extends Component {
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
-               Alternate / Parents Contact No
+                Alternate / Parents Contact No
               </span>
               <input
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
@@ -237,6 +239,23 @@ export default class QueryFrom extends Component {
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
+                Would you like to add more additional information?
+              </span>
+              <textarea
+                id="additional_text"
+                name="additional_text"
+                value={this.state.additional_text}
+                onChange={this.handleChange}
+                rows="4"
+                cols="50"
+                maxLength="50"
+                placeholder="Additional Information.. (if any)"
+                className=" block w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg  leading-tight focus:outline-none focus:shadow-outline"
+              />
+            </div>
+
+            <div className="mt-8">
+              <span className="uppercase text-sm text-gray-600 font-bold">
                 Please tick the checkbox
               </span>
 
@@ -251,6 +270,7 @@ export default class QueryFrom extends Component {
               <button className="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
                 Submit
               </button>
+              {/* 
               <hr className="my-1 mt-4 border-black" />
               <Link to="/Query">
                 <button
@@ -259,7 +279,7 @@ export default class QueryFrom extends Component {
                 >
                   For More info Click here
                 </button>
-              </Link>
+              </Link> */}
             </div>
           </form>
         </div>
