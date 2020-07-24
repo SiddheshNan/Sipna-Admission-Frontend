@@ -21,11 +21,14 @@ export default class AdditionalForm extends Component {
       chem: "",
       bio: "",
       voc: "",
+      jee: "",
+      aggree: false,
       catagory: "OPEN",
       faminc: "Less than 1 Lacs",
       ewc: "Yes",
       helprec: "Yes",
       additional_text: "",
+      prefer: "Yes",
       recaptcha: "",
       recaptchaRef: React.createRef(),
     };
@@ -44,12 +47,20 @@ export default class AdditionalForm extends Component {
     e.preventDefault();
     e.persist();
 
+    if (!this.state.aggree)
+      return swal({
+        title: "Please tick the question!",
+        icon: "error",
+        closeOnClickOutside: false,
+      });
+
     if (!this.state.recaptcha)
       return swal({
         title: "Please tick the checkbox!",
         icon: "error",
         closeOnClickOutside: false,
       });
+
     console.log("sending data..");
     swal({
       title: "Please Wait..",
@@ -74,9 +85,11 @@ export default class AdditionalForm extends Component {
           chem: this.state.chem,
           bio: this.state.bio,
           voc: this.state.voc,
+          jee: this.state.jee,
           catagory: this.state.catagory,
           family_inc: this.state.faminc,
           ewc: this.state.ewc,
+          prefer: this.state.prefer,
           help_required: this.state.helprec,
           other_branch: this.state.other,
           additional_text: this.state.additional_text,
@@ -236,7 +249,9 @@ export default class AdditionalForm extends Component {
               </span>
               <input
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text"
+                type="number"
+                min="0"
+                max="999"
                 required
                 placeholder="HSC Aggrigate.."
                 id="aggrigate"
@@ -248,11 +263,13 @@ export default class AdditionalForm extends Component {
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold ">
-                Physics
+                Marks in Physics
               </span>
               <input
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text"
+                type="number"
+                min="0"
+                max="999"
                 required
                 placeholder="Physics.."
                 id="phy"
@@ -264,11 +281,13 @@ export default class AdditionalForm extends Component {
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
-                Maths
+                Marks in Maths
               </span>
               <input
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text"
+                type="number"
+                min="0"
+                max="999"
                 required
                 id="maths"
                 name="maths"
@@ -280,11 +299,13 @@ export default class AdditionalForm extends Component {
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
-                Chem
+                Marks in Chem
               </span>
               <input
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text"
+                type="number"
+                min="0"
+                max="999"
                 required
                 id="chem"
                 name="chem"
@@ -296,11 +317,13 @@ export default class AdditionalForm extends Component {
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
-                Bio
+                Marks in Bio (if applicable)
               </span>
               <input
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text"
+                type="number"
+                min="0"
+                max="999"
                 id="bio"
                 name="bio"
                 value={this.state.bio}
@@ -311,16 +334,36 @@ export default class AdditionalForm extends Component {
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
-                Vocational (if any)
+                Marks in Vocational (Computer / Electronics etc.) (if
+                applicable)
               </span>
               <input
                 className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="text"
+                type="number"
+                min="0"
+                max="999"
                 id="voc"
                 name="voc"
                 value={this.state.voc}
                 onChange={this.handleChange}
                 placeholder="Vocational.."
+              />
+            </div>
+
+            <div className="mt-8">
+              <span className="uppercase text-sm text-gray-600 font-bold">
+                JEE Mains Score (if applicable)
+              </span>
+              <input
+                className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="number"
+                min="0"
+                max="999"
+                id="jee"
+                name="jee"
+                value={this.state.jee}
+                onChange={this.handleChange}
+                placeholder="JEE Mains Score .."
               />
             </div>
 
@@ -401,6 +444,52 @@ export default class AdditionalForm extends Component {
             </div>
 
             <div className="mt-8">
+              <span className="w-1/2 text-gray-800 font-bold">
+                I know that, this form is just First Year Engineering Admission
+                Willingness form. My admission will be confirmed only when I
+                fulfill all the formalities laid down by Admission Regularity
+                Authority (ARA) of MS State from time to time.
+                <br />
+                (प्रथम वर्ष अभियांत्रिकी मध्ये फक्त प्रवेश घ्यायची इच्छा
+                दर्शविण्यासाठी असलेला हा अर्ज) *
+              </span>
+              <br />{" "}
+              <div className="mt-2 -mb-5 text-gray-800 font-bold">Please tick the following checkbox.</div>
+              <br />
+              <label class="inline-flex items-center mt-3 mb-3">
+                <input
+                  type="checkbox"
+                  id="aggree"
+                  onChange={() => this.setState({ aggree: !this.state.aggree })}
+                  value={this.state.aggree}
+                  checked={this.state.aggree}
+                  required
+                  name="aggree"
+                  class="form-checkbox border-2 bg-gray-300 border-blue-500 h-5 w-5"
+                />
+                <span class="ml-2 text-gray-700">Yes</span>
+              </label>
+            </div>
+
+            <div className="mt-8">
+              <span className="uppercase text-sm text-gray-600 font-bold">
+                Will you prefer that our FYBE Admission coordinator shall
+                contact you to share more information?
+              </span>
+              <select
+                id="prefer"
+                name="prefer"
+                required
+                value={this.state.prefer}
+                onChange={this.handleChange}
+                className=" block w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg  leading-tight focus:outline-none focus:shadow-outline"
+              >
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+
+            <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
                 Would you like to add more additional information?
               </span>
@@ -452,7 +541,8 @@ export default class AdditionalForm extends Component {
             className="no-underline hover:underline text-blue-300"
           >
             SiddheshNan
-          </a>
+          </a>{" "}
+          SipnaCOET, Amt.
         </footer>
       </div>
     );

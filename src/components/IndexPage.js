@@ -66,7 +66,7 @@ export default class IndexPage extends Component {
             <div className="flex flex-wrap text-left sm:ml-8 md:ml-20">
               <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
                 <i className="fas fa-dot-circle " />
-                &nbsp; Computer Science &amp; Engineering
+                &nbsp; Computer Science &amp; Engg.
               </div>
               <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
                 <i className="fas fa-dot-circle" />
@@ -270,12 +270,12 @@ export default class IndexPage extends Component {
             </Link>
           </section>
           <footer>
-            <div className="mx-auto mt-12 mb-8 text-center mx-auto">
+            <div className="mx-auto mt-20 mb-8 text-center mx-auto">
               <a
                 className="text-blue-700 no-underline hover:underline hover:text-blue-500 font-bold text-2xl"
                 href="https://siddhesh.me/"
               >
-                © SiddheshNan
+                © SiddheshNan SipnaCOET, Amt.
               </a>
             </div>
           </footer>

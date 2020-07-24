@@ -290,7 +290,7 @@ export default class QueryFrom extends Component {
             className="no-underline hover:underline text-blue-300"
           >
             SiddheshNan
-          </a>
+          </a>  SipnaCOET, Amt.
         </footer>
       </div>
     );

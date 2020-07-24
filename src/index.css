@@ -223,3 +223,9 @@ body {
   width: auto;
   height: auto;
 }
+
+input[type="checkbox"]{
+  width: 30px; /*Desired width*/
+  height: 30px; /*Desired height*/
+  outline: 2px solid #85929E
+}
