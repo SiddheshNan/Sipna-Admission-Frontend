@@ -66,24 +66,24 @@ export default class IndexPage extends Component {
             <div className="flex flex-wrap text-left sm:ml-8 md:ml-20">
               <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
                 <i className="fas fa-dot-circle " />
-                &nbsp; Computer Science &amp; Engg.
-              </div>
-              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
-                <i className="fas fa-dot-circle" />
-                &nbsp; Information Technology
-              </div>
-
-              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
-                <i className="fas fa-dot-circle" />
                 &nbsp; Electronics &amp; Telecomm. Engg.
               </div>
               <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
                 <i className="fas fa-dot-circle" />
                 &nbsp; Mechanical Engineering
               </div>
-              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 ">
+
+              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
                 <i className="fas fa-dot-circle" />
                 &nbsp; Civil Engineering
+              </div>
+              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 mx-auto">
+                <i className="fas fa-dot-circle" />
+                &nbsp; Information Technology
+              </div>
+              <div className="w-full md:w-1/2 py-4 md:p-4 px-2 ">
+                <i className="fas fa-dot-circle" />
+                &nbsp; Computer Science &amp; Engg.
               </div>
             </div>
           </div>
@@ -159,8 +159,8 @@ export default class IndexPage extends Component {
               </li>
               <li className="my-2">
                 <i className="fas fa-dot-circle" />
-                &nbsp; Four fully air-conditioned hostels with total intake of
-                350 students.
+                &nbsp; Four fully air-conditioned girl's hostels with total
+                intake of 350 students.
               </li>
               <li className="my-2">
                 <i className="fas fa-dot-circle" />
@@ -179,7 +179,7 @@ export default class IndexPage extends Component {
               </li>
               <li className="my-2">
                 <i className="fas fa-dot-circle" />
-                &nbsp; Computerizes Library with Book Bank facility.
+                &nbsp; Computerized Library with Book Bank facility.
               </li>
               <li className="my-2">
                 <i className="fas fa-dot-circle" />

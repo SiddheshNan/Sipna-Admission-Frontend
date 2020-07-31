@@ -138,47 +138,63 @@ export default class AdditionalForm extends Component {
               Full Name
             </span>
             <input
-              className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              className="w-full bg-gray-300 text-gray-900 mb-1 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
               type="text"
               required
               placeholder="Your Name.."
+              pattern="^[a-zA-Z_ ]*$"
               id="name"
               name="name"
               value={this.state.name}
               onChange={this.handleChange}
             />
+             <span className="uppercase text-sm text-gray-500 font-bold">
+              (Only Characters Allowed)
+            </span>
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
                 Contact No
               </span>
               <input
-                className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="tel"
+                className="w-full bg-gray-300 text-gray-900 mt-2 mb-1  p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="number"
+                max="9999999999"
+                min="6000000000"
                 required
                 placeholder="Your Contact No.."
+                pattern="^[0-9]*$"
                 id="num"
                 name="num"
                 value={this.state.num}
                 onChange={this.handleChange}
               />
             </div>
+            <span className="uppercase text-sm text-gray-500 font-bold">
+              (Only Numbers Allowed)
+            </span>
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
                 Alternate / Parents Contact No
               </span>
               <input
-                className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="tel"
+                className="w-full bg-gray-300 text-gray-900 mt-2 mb-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="number"
                 required
+                pattern="^[0-9]*$"
                 placeholder="Alternate Contact No.."
                 id="altcon"
+                max="9999999999"
+                min="6000000000"
                 name="altcon"
                 value={this.state.altcon}
                 onChange={this.handleChange}
               />
             </div>
+            <span className="uppercase text-sm text-gray-500 font-bold">
+              (Only Numbers Allowed)
+            </span>
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
@@ -411,7 +427,7 @@ export default class AdditionalForm extends Component {
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
-                Are Belong to Economically Weaker Section
+                Do You Belong to Economically Weaker Section
               </span>
               <select
                 id="ewc"
@@ -454,9 +470,11 @@ export default class AdditionalForm extends Component {
                 दर्शविण्यासाठी असलेला हा अर्ज) *
               </span>
               <br />{" "}
-              <div className="mt-2 -mb-5 text-gray-800 font-bold">Please tick the following checkbox.</div>
+              <div className="mt-2 -mb-5 text-gray-800 font-bold">
+                Please tick the following checkbox.
+              </div>
               <br />
-              <label class="inline-flex items-center mt-3 mb-3">
+              <label className="inline-flex items-center mt-3 mb-3">
                 <input
                   type="checkbox"
                   id="aggree"
@@ -465,9 +483,9 @@ export default class AdditionalForm extends Component {
                   checked={this.state.aggree}
                   required
                   name="aggree"
-                  class="form-checkbox border-2 bg-gray-300 border-blue-500 h-5 w-5"
+                  className="form-checkbox border-2 bg-gray-300 border-blue-500 h-5 w-5"
                 />
-                <span class="ml-2 text-gray-700">Yes</span>
+                <span className="ml-2 text-gray-700">Yes</span>
               </label>
             </div>
 

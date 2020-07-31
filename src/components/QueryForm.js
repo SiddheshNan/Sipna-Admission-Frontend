@@ -3,7 +3,7 @@ import sipnalogo from "../assets/sipna_logo.png";
 import ReCAPTCHA from "react-google-recaptcha";
 import axios from "axios";
 import swal from "sweetalert";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default class QueryFrom extends Component {
   constructor(props) {
@@ -109,47 +109,63 @@ export default class QueryFrom extends Component {
               Full Name
             </span>
             <input
-              className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+              className="w-full bg-gray-300 text-gray-900 mt-2 mb-1 p-3 rounded-lg focus:outline-none focus:shadow-outline"
               type="text"
               required
-              placeholder="Your Name.."
+              placeholder="Your Name.. "
               id="name"
               name="name"
+              pattern="^[a-zA-Z_ ]*$"
               value={this.state.name}
               onChange={this.handleChange}
             />
+            <span className="uppercase text-sm text-gray-500 font-bold">
+              (Only Characters Allowed)
+            </span>
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
                 Contact No
               </span>
               <input
-                className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="tel"
+                className="w-full bg-gray-300 text-gray-900 mb-1  mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="number"
                 required
                 placeholder="Your Contact No.."
+                pattern="^[0-9]*$"
                 id="num"
                 name="num"
                 value={this.state.num}
                 onChange={this.handleChange}
+                max="9999999999"
+                min="6000000000"
               />
             </div>
+            <span className="uppercase text-sm text-gray-500 font-bold">
+              (Only Numbers Allowed)
+            </span>
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
                 Alternate / Parents Contact No
               </span>
               <input
-                className="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                type="tel"
+                className="w-full bg-gray-300 text-gray-900 mb-1  mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                type="number"
                 required
                 placeholder="Alternate Contact No.."
+                pattern="^[0-9]*$"
                 id="altcon"
                 name="altcon"
                 value={this.state.altcon}
                 onChange={this.handleChange}
+                max="9999999999"
+                min="6000000000"
               />
             </div>
+            <span className="uppercase text-sm text-gray-500 font-bold">
+              (Only Numbers Allowed)
+            </span>
 
             <div className="mt-8">
               <span className="uppercase text-sm text-gray-600 font-bold">
@@ -270,16 +286,16 @@ export default class QueryFrom extends Component {
               <button className="uppercase text-sm font-bold tracking-wide bg-indigo-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
                 Submit
               </button>
-              {/* 
+
               <hr className="my-1 mt-4 border-black" />
               <Link to="/Query">
                 <button
                   type="button"
                   className="mx-auto mt-3 uppercase text-sm font-bold tracking-wide bg-green-500 text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline"
                 >
-                  For More info Click here
+                  Know More
                 </button>
-              </Link> */}
+              </Link>
             </div>
           </form>
         </div>
@@ -290,7 +306,8 @@ export default class QueryFrom extends Component {
             className="no-underline hover:underline text-blue-300"
           >
             SiddheshNan
-          </a>  SipnaCOET, Amt.
+          </a>{" "}
+          SipnaCOET, Amt.
         </footer>
       </div>
     );
